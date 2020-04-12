@@ -1,0 +1,39 @@
+@import 'reset';
+
+$fontSize: 37.5;
+@function px2rem ($px) {
+    @return ($px / $fontSize) + rem;
+}
+
+@mixin center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    color: #333;
+    font-size: px2rem(20);
+}
+
+  .silde-down-enter, .silde-down-leave-to{
+    transform: translate3d(0,-100%,0);
+  }
+  .silde-down-enter-to, .slide-down-leave,
+  .menu-up-enter-to, .menu-up-leave{
+    transform: translate3d(0,0,0);
+  }
+  .silde-down-enter-active, .silde-down-leave-active,
+  .menu-up-enter-active, .menu-up-leave-active{
+    transition: transform .3s linear;
+  }
+  .menu-up-enter, .menu-up-leave-to{
+  transform: translate3d(0,px2rem(108),0);
+  }
+
+  .fade-enter, .fade-leave-to{
+    opacity: 0;
+  }
+  .fade-enter-to, .fade-leave {
+    opacity: 1;
+  }
